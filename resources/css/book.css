@@ -1,0 +1,15 @@
+/*
+cssやjsを追記する時は，resources/cssや/js以下にファイルを作成後，webpack.mix.jsに，
+====
+mix.js('resources/js/book.js','public/js')
+    .css('resources/css/book.css','public/css')
+====
+こんな感じでコンパイルや圧縮してほしいものを記載していく
+
+その後コマンドラインで，npm run dev　を実行する．
+npm run hot とすると，変更があった場合に自動的に再コンパイルしてくれる．
+*/
+p{
+    font-size: 22px;
+    letter-spacing: 0.1em;
+}
