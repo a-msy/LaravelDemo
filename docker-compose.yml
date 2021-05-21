@@ -1,0 +1,16 @@
+version: '3'
+services:
+  elasticsearch:
+    build: ./
+    ports:
+        - 9200:9200
+    volumes:
+      - es-data:/usr/share/elasticsearch/data        
+    environment:
+      - discovery.type=single-node
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+volumes:
+  es-data:
+    driver: local
